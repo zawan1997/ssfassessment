@@ -22,10 +22,10 @@ public class RestNewsController {
 
     @GetMapping(path = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getArticle(
-            @PathVariable String id) {
+            @PathVariable("id") String id) {
         if (nSv.searchValidity(id) != true) {
             JsonObject errResp = Json.createObjectBuilder()
-                    .add("ERROR", "THE ARTICLE WAS NOT SAVED")
+                    .add("error", "cannot find news article ${id}")
                     .build();
             String payload = errResp.toString();
             // return 400

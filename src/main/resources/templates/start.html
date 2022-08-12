@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto News of the Day</title>
+</head>
+<body>
+    <h1> Crypto News of the day</h1>
+    <form form method="POST" action="/start">
+
+    <div data-th-each="l:${ln}">
+        <table>
+            <tr>
+                
+                    <h1>ID:</h1>
+                    <span data-th-text="${l.id}"></span>
+                    <br>
+                    <h1>Title:</h1>
+                    <span data-th-text="${l.title}"></span>
+                    <br>
+                    <h1>Body:</h1>
+                    <span data-th-text="${l.body}"></span>
+                    <br>
+                    <h1>Tags:</h1>
+                    <span data-th-text="${l.tags}"></span>
+                    <br>
+                    <h1>Published on</h1>
+                    <span data-th-text="${l.published_on}"></span>
+                    <h1>Image</h1>
+                    <img data-th-src="${l.imageurl}" alt="">
+                    <h1>URL:</h1>
+                    <a th:href="${l.url}">Read More</a>
+                    <br>
+                    <input class="checkbox" type="checkbox" name="c1">
+                    <button type="submit">Save</button>
+
+               
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>
